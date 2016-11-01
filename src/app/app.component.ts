@@ -11,6 +11,7 @@ import { Days } from "../pages/days/days";
 import { Location } from "../pages/location/location";
 import { Join } from "../pages/join/join";
 import { Login } from "../pages/login/login";
+import { Contact } from "../pages/contact/contact";
 
 
 @Component({
@@ -39,6 +40,7 @@ export class MyApp {
       { title: 'Days', component: Days },
       { title: 'Resources', component: ResourceCategories },
       { title: 'Location', component: Location },
+      { title: 'Contact', component: Contact },
       { title: 'Join', component: Join },
       { title: 'Login', component: Login }
     ];

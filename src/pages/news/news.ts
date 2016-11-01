@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { MenuController, LoadingController } from 'ionic-angular';
+import { MenuController, LoadingController, Nav } from 'ionic-angular';
 import { LambdaApi } from "../../shared/lambda-api.service";
 import { Storage } from '@ionic/storage';
+import { Location } from '../../pages/location/location';
 
 @Component({
   selector: 'page-news',
@@ -14,7 +15,9 @@ export class News {
   constructor(public menu: MenuController,
               public lambda: LambdaApi,
               public loadingController: LoadingController,
-              public storage: Storage) {
+              public storage: Storage,
+              public nav: Nav
+  ) {
   }
 
   ionViewDidLoad() {
@@ -37,6 +40,11 @@ export class News {
         this.articles = JSON.parse(data);
       }
     });
+  }
+
+  loadMap()
+  {
+    this.nav.push(Location);
   }
 
 }

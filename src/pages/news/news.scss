@@ -1,6 +1,10 @@
 page-news {
-
   .logo {
     width: 150px;
+  }
+
+  .list-md > .item-block:first-child,
+  .list-md > .item-block:last-child {
+    border: none;
   }
 }

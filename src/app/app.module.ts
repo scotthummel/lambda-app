@@ -12,6 +12,7 @@ import { ArticleDetail } from "../pages/article-detail/article-detail";
 import { Sponsors } from "../pages/sponsors/sponsors";
 import { Board } from "../pages/board/board";
 import { Location } from "../pages/location/location";
+import { Contact } from "../pages/contact/contact";
 import { Join } from "../pages/join/join";
 import { Login } from "../pages/login/login";
 import { MeetingsByDay } from "../pages/meetings-by-day/meetings-by-day";
@@ -34,7 +35,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     Location,
     Join,
     Login,
-    MeetingsByDay
+    MeetingsByDay,
+    Contact
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -56,7 +58,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     Location,
     Join,
     Login,
-    MeetingsByDay
+    MeetingsByDay,
+    Contact
   ],
   providers: [ Storage ]
 })
