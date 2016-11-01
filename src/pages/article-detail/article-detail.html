@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ article.headline }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+
+    <ion-card-header>
+      {{ article.headline }}
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <div [innerHTML] = "article.story"></div>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
