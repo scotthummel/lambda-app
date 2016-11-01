@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController, NavParams } from 'ionic-angular';
 import { LambdaApi } from "../../shared/lambda-api.service";
+import { Storage } from '@ionic/storage';
 
-/*
-  Generated class for the MeetingsByDay page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-meetings-by-day',
   templateUrl: 'meetings-by-day.html'
@@ -18,22 +13,35 @@ export class MeetingsByDay {
 
   public day = {};
 
-  constructor(public navCtrl: NavController, public loadingController : LoadingController, public params : NavParams, public lambda: LambdaApi) {}
+  constructor(public navCtrl: NavController,
+              public loadingController : LoadingController,
+              public params : NavParams,
+              public lambda: LambdaApi,
+              public storage: Storage
+  ) {}
 
   ionViewDidLoad() {
-    let loader = this.loadingController.create({
-      content: 'Loading Meetings...'
-    });
+    var today = new Date().toISOString().slice(0, 10);
+    let day = this.params.data;
 
-    loader.present().then(() => {
-      let day = this.params.data;
+    this.storage.get('day/' + day + '/' + today).then((data) => {
+      if (!data) {
+        let loader = this.loadingController.create({
+          content: 'Loading Meetings...'
+        });
 
-      this.lambda.getMeetingsByDay(day.abbreviation).subscribe(data => {
-        this.meetings = data;
+        loader.present().then(() => {
+          this.lambda.getMeetingsByDay(day.abbreviation).subscribe(data => {
+            this.meetings = data;
+            this.day = day.full_name;
+            this.storage.set('day/' + day + '/' + today, JSON.stringify(data));
+            loader.dismiss();
+          });
+        });
+      } else {
+        this.meetings = JSON.parse(data);
         this.day = day.full_name;
-        loader.dismiss();
-      });
+      }
     });
   }
-
 }

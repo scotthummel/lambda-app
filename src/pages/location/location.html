@@ -1,12 +1,42 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Location</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Location
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
 
+  <ion-card>
+
+    <ion-card-header>
+      Location
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1>Our Location</h1>
+
+      <p>Lambda is located at 2622 N. 16th St. in Phoenix, at the southwest corner of Virginia Ave. and 16th St. Virginia Avenue is a few blocks south of Thomas Road. Parking is available behind the building or in the adjacent strip mall. Do not park in the four spaces in front of the beauty salon (directly adjacent to the Lambda parking lot) or your car will be towed, even during evening hours.</p>
+
+      <p>Please note the sign for Lambda is on the south side of the building, so if you are unfamiliar with Lambda's location, you may want to approach from the south.</p>
+
+      <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <sebm-google-map-marker [latitude]="lat" [longitude]="lng">
+          <sebm-google-map-info-window [isOpen]="true">
+            <img class="logo" src="../../assets/images/lambda_logo.png">
+            <div [innerHTML]="address"></div>
+          </sebm-google-map-info-window>
+        </sebm-google-map-marker>
+      </sebm-google-map>
+    </ion-card-content>
+
+  </ion-card>
+
 </ion-content>
+

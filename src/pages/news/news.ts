@@ -18,24 +18,24 @@ export class News {
   }
 
   ionViewDidLoad() {
-    let loader = this.loadingController.create({
-      content: 'Loading Articles...'
-    });
+    var today = new Date().toISOString().slice(0, 10);
 
-    loader.present().then(() => {
-      this.storage.get('articles').then((data) => {
-        if (!data) {
+    this.storage.get('articles/' + today).then((data) => {
+      if (!data) {
+        let loader = this.loadingController.create({
+          content: 'Loading Articles...'
+        });
+
+        loader.present().then(() => {
           this.lambda.getArticles().subscribe(data => {
             this.articles = data;
-            this.storage.set('articles', JSON.stringify(data));
+            this.storage.set('articles/' + today, JSON.stringify(data));
             loader.dismiss();
           });
-        } else {
-            this.articles = JSON.parse(data);
-            loader.dismiss();
-        }
-      });
-
+        });
+      } else {
+        this.articles = JSON.parse(data);
+      }
     });
   }
 
