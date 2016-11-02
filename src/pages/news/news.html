@@ -33,18 +33,16 @@
   <ion-card>
 
     <ion-card-header class="card-header">
-      News
+      Lambda News
     </ion-card-header>
 
     <ion-card-content>
 
-      <ion-list>
-        <ion-item *ngFor="let article of articles">
-          <h2>{{ article.headline }}</h2>
+      <article *ngFor="let article of articles">
+        <h2 class="headline">{{ article.headline }}</h2>
 
-          <div [innerHTML] = "article.story" class="article"></div>
-        </ion-item>
-      </ion-list>
+        <div [innerHTML] = "article.story" class="article"></div>
+      </article>
 
     </ion-card-content>
 

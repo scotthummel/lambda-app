@@ -34,10 +34,10 @@ ion-card-header.card-header {
   color: #FFF;
 }
 
-.item-md h2 {
-  font-size: 20px;
+h2.headline {
+  font-size: 22px;
   font-family: 'Oswald', sans-serif;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -56,7 +56,7 @@ ion-label {
 
 .article p,
 .card-md p {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .list-md[inset] {
@@ -73,4 +73,16 @@ ion-item-divider.item-md {
   font-family: 'Oswald', sans-serif;
   color: #FFF;
   background-color: #dc90dc;
+}
+
+ion-card {
+  margin: 0;
+}
+
+ion-card-content {
+  padding: 4px;
+}
+
+.item-md {
+  padding-left: 0;
 }
