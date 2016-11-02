@@ -1,11 +1,11 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Lambda Phoenix Center
+      Lambda
     </ion-title>
   </ion-navbar>
 
@@ -16,7 +16,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <img class="logo" src="../../assets/images/lambda_logo.png">
+        <img class="logo" src="assets/images/lambda_logo.png">
       </ion-col>
       <ion-col text-right>
         <p><strong>Recovery Center</strong><br />
@@ -32,7 +32,7 @@
 
   <ion-card>
 
-    <ion-card-header>
+    <ion-card-header class="card-header">
       News
     </ion-card-header>
 
@@ -45,7 +45,6 @@
           <div [innerHTML] = "article.story" class="article"></div>
         </ion-item>
       </ion-list>
-
 
     </ion-card-content>
 

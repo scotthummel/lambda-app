@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -29,7 +29,7 @@
       <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
         <sebm-google-map-marker [latitude]="lat" [longitude]="lng">
           <sebm-google-map-info-window [isOpen]="true">
-            <img class="logo" src="../../assets/images/lambda_logo.png">
+            <img class="logo" src="assets/images/lambda_logo.png">
             <div [innerHTML]="address"></div>
           </sebm-google-map-info-window>
         </sebm-google-map-marker>
