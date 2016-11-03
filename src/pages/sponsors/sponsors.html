@@ -18,7 +18,7 @@
 
       <ion-item-group *ngFor="let level of sponsors">
 
-        <ion-item-divider *ngIf="level.sponsors.length">{{ level.level }}</ion-item-divider>
+        <h2 class="headline" *ngIf="level.sponsors.length">{{ level.level }}</h2>
         <ion-item *ngFor="let sponsor of level.sponsors">
           <h2>{{ sponsor.sponsor_name }}</h2>
 

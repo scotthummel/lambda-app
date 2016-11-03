@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="dark">
-    <ion-title>{{ article.headline }}</ion-title>
+    <ion-title>About</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,6 +17,7 @@
 
     <ion-card-content>
 
+      <h2 class="headline">{{ article.headline }}</h2>
       <div [innerHTML] = "article.story"></div>
 
     </ion-card-content>

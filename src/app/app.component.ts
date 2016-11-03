@@ -9,7 +9,7 @@ import { ResourceCategories } from "../pages/resource-categories/resource-catego
 import { About } from "../pages/about/about";
 import { Days } from "../pages/days/days";
 import { Location } from "../pages/location/location";
-import { Join } from "../pages/join/join";
+import { Membership } from "../pages/membership/membership";
 import { Login } from "../pages/login/login";
 import { Contact } from "../pages/contact/contact";
 
@@ -41,7 +41,7 @@ export class MyApp {
       { title: 'Resources', component: ResourceCategories },
       { title: 'Location', component: Location },
       { title: 'Contact', component: Contact },
-      { title: 'Join', component: Join },
+      { title: 'Membership', component: Membership },
       { title: 'Login', component: Login }
     ];
 

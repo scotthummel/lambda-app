@@ -19,6 +19,7 @@ import { MeetingsByDay } from "../pages/meetings-by-day/meetings-by-day";
 import { Storage } from '@ionic/storage';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { Developer } from "../pages/developer/developer";
+import { Membership } from "../pages/membership/membership";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { Developer } from "../pages/developer/developer";
     Login,
     MeetingsByDay,
     Contact,
-    Developer
+    Developer,
+    Membership
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -62,7 +64,8 @@ import { Developer } from "../pages/developer/developer";
     Login,
     MeetingsByDay,
     Contact,
-    Developer
+    Developer,
+    Membership
   ],
   providers: [ Storage ]
 })

@@ -17,13 +17,10 @@
 
     <ion-card-content>
 
-      <ion-grid>
-        <ion-row *ngFor="let member of board">
-          <ion-col><strong>{{ member.name }}</strong></ion-col>
-          <ion-col>{{ member.position }}</ion-col>
-          <ion-col><a href="mailto:{{ member.email }}@lambdaphx.org">{{ member.email }}@lambdaphx.org</a></ion-col>
-        </ion-row>
-      </ion-grid>
+      <article *ngFor="let member of board">
+        <h3 class="headline board">{{ member.position }}</h3>
+        <p><a href="mailto:{{ member.email }}@lambdaphx.org">{{ member.name }}@lambdaphx.org</a></p>
+      </article>
 
     </ion-card-content>
 

@@ -40,6 +40,16 @@ h2.headline {
   margin-bottom: 20px;
 }
 
+h3.headline {
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 20px;
+}
+
+h3.headline.board {
+  margin-bottom: 10px;
+}
+
 h1 {
   font-size: 24px;
   font-family: 'Oswald', sans-serif;
@@ -81,4 +91,8 @@ ion-card {
 
 ion-card-content {
   padding: 4px;
+}
+
+article {
+  margin-bottom: 15px;
 }
